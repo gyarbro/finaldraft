@@ -1,31 +1,55 @@
 <!DOCTYPE html>
-	<html lang="en">
-	<head>
-	  <meta charset="UTF-8">
-	  <title>Thank You!</title>
-	  <style>
-		body {
-		  font-family: Arial, sans-serif;
-		  text-align: center;
-		  padding: 50px;
-		  background-image: url('images/banner.jpg');
-		  background-position: center;
-		  background-repeat: no-repeat;
-		  color: #4B0000;
-		}
-		h1 {
-		  color: #4B0000;
-		}
-		a {
-		  text-decoration: none;
-		  color: #4B0000;
-		  font-weight: bold;
-		}
-	  </style>
-	</head>
-	<body>
-	  <h1>Thank You!</h1>
-	  <p>Your message has been sent. Mrs. Yarbrough will respond in 24–48 hours.</p>
-	  <a href="index.html">Go Back to Home</a>
-	</body>
-	</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You!</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #4B0000;
+    }
+
+    body {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+
+    /* Background image with transparency using ::before */
+    body::before {
+      content: "";
+      background: url('images/banner.jpg') center center / cover no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.5; /* Adjust for desired transparency */
+      z-index: -1; /* Place behind content */
+    }
+
+    h1, p, a {
+      position: relative;
+      z-index: 2; /* Ensure text appears above background */
+    }
+
+    h1 {
+      color: #4B0000;
+    }
+
+    a {
+      text-decoration: none;
+      color: #4B0000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank You!</h1>
+  <p>Your message has been sent. Mrs. Yarbrough will respond in 24–48 hours.</p>
+  <a href="index.html">Go Back to Home</a>
+</body>
+</html>
