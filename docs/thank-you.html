@@ -7,37 +7,38 @@
     html, body {
       height: 100%;
       margin: 0;
-      padding: 0;
+      overflow: hidden; /* Prevent scrollbars */
       font-family: Arial, sans-serif;
       color: #4B0000;
     }
 
     body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
       text-align: center;
-      z-index: 1;
     }
 
-    /* Background image with transparency using ::before */
+    /* Background image with transparency */
     body::before {
       content: "";
-      background: url('images/banner.jpg') center center / cover no-repeat;
       position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
       width: 100%;
-      opacity: 0.5; /* Adjust for desired transparency */
-      z-index: -1; /* Place behind content */
+      height: 100%;
+      background: url('images/banner.jpg') center center / cover no-repeat;
+      opacity: 0.5; /* 50% transparency */
+      z-index: -1;
     }
 
-    h1, p, a {
-      position: relative;
-      z-index: 2; /* Ensure text appears above background */
+    .content {
+      z-index: 1;
     }
 
     h1 {
-      color: #4B0000;
+      margin: 0 0 20px;
     }
 
     a {
@@ -48,8 +49,10 @@
   </style>
 </head>
 <body>
-  <h1>Thank You!</h1>
-  <p>Your message has been sent. Mrs. Yarbrough will respond in 24–48 hours.</p>
-  <a href="index.html">Go Back to Home</a>
+  <div class="content">
+    <h1>Thank You!</h1>
+    <p>Your message has been sent. Mrs. Yarbrough will respond in 24–48 hours.</p>
+    <a href="index.html">Go Back to Home</a>
+  </div>
 </body>
 </html>
